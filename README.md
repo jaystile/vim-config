@@ -1,2 +1,2 @@
 # vim-config
-My personal settings for vim
+My personal settings for vim 8+
