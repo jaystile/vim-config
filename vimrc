@@ -8,7 +8,18 @@ endif
 let mapleader = "\<Space>"
 
 "------------------------------------------------------------
-" Install Plugins - Start
+" Settings
+"------------------------------------------------------------
+" Spellcheck :setlocal spell
+" z= to see recommendations.
+" set spell
+set spelllang=en
+set spellfile=$HOME/.vim/spell/en.utf-8.add
+
+
+"------------------------------------------------------------
+" Plugins 
+"------------------------------------------------------------
 call plug#begin('~/.vim/plugged')
 
 Plug 'sheerun/vimrc'
@@ -54,12 +65,10 @@ let g:netrw_liststyle = 1 "alphabetical list with attributes
 
 call plug#end()
 " Install Plugins - End 
-"------------------------------------------------------------
-
 
 "------------------------------------------------------------
 " Mappings
-"
+"------------------------------------------------------------
 " In Vim, the mapleader or <leader> key is like a namespaced command key for
 " user commands so that you don't accidentally override something important
 " from the base Vim command set.
@@ -87,13 +96,9 @@ nnoremap <leader>f :FzfRg<CR>
 " Yank all unnamed into the system buffer
 set clipboard=unnamedplus
 
-" Copy to clipboard
-" vnoremap <leader>y "+y
-" nnoremap <leader>Y "+yg_
-" nnoremap <leader>y "+y
-
-" Paste from clipboard
-" nnoremap <leader>p "+p
-" nnoremap <leader>P "+P
-" vnoremap <leader>p "+p
-" vnoremap <leader>P "+P
+" Stay Centered
+nnoremap <silent> j jzz
+nnoremap <silent> k kzz
+" Scroll Faster
+nnoremap <silent> <C-j> 10jzz
+nnoremap <silent> <C-k> 10kzz
