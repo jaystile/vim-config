@@ -16,6 +16,9 @@ let mapleader = "\<Space>"
 set spelllang=en
 set spellfile=$HOME/.vim/spell/en.utf-8.add
 
+" Change default split behavior
+set splitbelow
+set splitright
 
 "------------------------------------------------------------
 " Plugins 
@@ -24,6 +27,9 @@ call plug#begin('~/.vim/plugged')
 
 Plug 'sheerun/vimrc'
 Plug 'sheerun/vim-polyglot'
+
+" File Commenting
+Plug 'tpope/vim-commentary'
 
 " Fuzzy file search
 Plug 'junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all'}
@@ -35,7 +41,6 @@ Plug 'fatih/vim-go'
 " disable all linters as that is taken care of by coc.nvim
 let g:go_diagnostics_enabled = 0
 let g:go_metalinter_enabled = []
-
 " don't jump to errors after metalinter is invoked
 let g:go_jump_to_error = 0
 
@@ -86,8 +91,11 @@ nnoremap <leader>g :FzfGFiles<CR>
 " <leader>o should open fzf for all files
 nnoremap <leader>o :FzfFiles<CR>
 
-" <leader>f should run fzf with ripgrep for file search by content
+" <leader>f should run fzf with ripgrep for file text search by content
 nnoremap <leader>f :FzfRg<CR>
+
+" Ctrl-/ comments out lines with Commentary
+noremap <silent> <C-_> :Commentary<CR>
 
 " system clipboard yank and put
 " Note: this requires vim to be built with the +clipboard feature flag
@@ -102,3 +110,5 @@ nnoremap <silent> k kzz
 " Scroll Faster
 nnoremap <silent> <C-j> 10jzz
 nnoremap <silent> <C-k> 10kzz
+" Exit insert mode and go forward one character
+" inoremap <silent> <Esc> <Esc>`^
