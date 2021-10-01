@@ -7,18 +7,6 @@ endif
 " Select your Leader key
 let mapleader = "\<Space>"
 
-"------------------------------------------------------------
-" Settings
-"------------------------------------------------------------
-" Spellcheck :setlocal spell
-" z= to see recommendations.
-" set spell
-set spelllang=en
-set spellfile=$HOME/.vim/spell/en.utf-8.add
-
-" Change default split behavior
-set splitbelow
-set splitright
 
 "------------------------------------------------------------
 " Plugins 
@@ -70,6 +58,19 @@ let g:netrw_liststyle = 1 "alphabetical list with attributes
 
 call plug#end()
 " Install Plugins - End 
+
+"------------------------------------------------------------
+" Settings
+"------------------------------------------------------------
+" Spellcheck :setlocal spell
+" z= to see recommendations.
+" set spell
+set spelllang=en
+set spellfile=$HOME/.vim/spell/en.utf-8.add
+
+" I really do not like automatically continuing comments to new lines.
+"  it messes up my pastes and I'm usually writing one line comments anyway.
+autocmd BufNewFile,BufRead * setlocal formatoptions-=cro
 
 "------------------------------------------------------------
 " Mappings
