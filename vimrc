@@ -16,6 +16,11 @@ call plug#begin('~/.vim/plugged')
 Plug 'sheerun/vimrc'
 Plug 'sheerun/vim-polyglot'
 
+" Termdebug - for debugging rust
+let termdebugger="rust-gdb"
+" Open the debugger split vertically instead of horizontally
+let g:termdebug_wide=1
+
 " File Commenting
 Plug 'tpope/vim-commentary'
 
